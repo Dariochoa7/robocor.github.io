@@ -1,0 +1,568 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+    font-family: 'Amasis MT W01 italic', Helvetica;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+    background-color: #316c8d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los textos verticalmente */
+}
+
+.main-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+
+.sub-title {
+    font-size: 1.2em;
+    color: white;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Sección de Servicios */
+.servicios-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 50px;
+    background-color: white;
+}
+
+.servicio {
+    text-align: center;
+    margin: 20px;
+}
+
+.servicio img {
+    width: 100px;
+    height: auto;
+}
+
+.servicio h3 {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #316c8d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .social-icons a img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container img.logo {
+    width: 50px;
+    margin-right: 10px;
+
+}
+
+.logo-container h1 {
+    color: white;
+    font-size: 24px;
+}
+
+nav ul li a:hover {
+    color: #f9f9f9;
+}
+
+footer .logo {
+    width: 50px;
+}
+
+
+
+/* Servicios section */
+.servicios-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Esto hace que las columnas se ajusten automáticamente según el tamaño de la pantalla */
+    gap: 20px;
+    padding: 40px;
+    background-color: #e1f1ff;
+}
+
+.servicial {
+    background-color: #316c8d;
+    color: white;
+    padding: 20px;
+    border-radius: 10px; /* Cambié el valor a 10px para suavizar las esquinas */
+    text-align: center;
+    margin: 20px;
+}
+
+.servicial img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.servicial h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.servicial p {
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.servicial img.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+
+/* Sección de Sobre Nosotros */
+.sobre-nosotros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+}
+
+.sobre-nosotros .content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.sobre-nosotros .content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.sobre-nosotros .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-nosotros .image img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #2E73B8;
+    border-radius: 5px;
+}
+
+/* Sección de Testimonios */
+.testimonials-section {
+    padding: 40px;
+    background-color: #f7f9fc;
+    text-align: center;
+}
+
+.testimonials-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #003366;
+}
+
+.testimonial {
+    margin-bottom: 30px;
+}
+
+.testimonial-quote {
+    font-size: 1.2em;
+    font-style: italic;
+    color: #333;
+    margin: 10px 0;
+}
+
+.testimonial-author {
+    font-size: 1em;
+    color: #555;
+}
+
+.testimonial-stars {
+    font-size: 1.5em;
+    color: gold;
+    margin: 10px 0;
+}
+
+
+/*scripts Testimonios */
+
+.testimonials-section {
+    padding: 40px;
+    background-color: #f7f7f7;
+}
+
+.testimonial {
+    opacity: 0;
+    transform: translateX(-50px);
+    margin-bottom: 30px;
+}
+
+.testimonial-quote {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.testimonial-stars {
+    font-size: 20px;
+    color: #f39c12;
+    opacity: 0;
+    display: inline-block;
+}
+
+/* Animación de desvanecimiento de las estrellas */
+@keyframes shine {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.testimonial {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+
+/* Encabezado de contacto */
+.contact-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f618d;
+    padding: 20px;
+    color: white;
+}
+
+.contact-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.contact-logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Sección del formulario de contacto */
+.contact-form-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #f4f4f4;
+}
+
+.contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 48%;
+    padding: 10px;
+    border: 1px dashed black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #1f618d;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Logo grande */
+.contact-logo-large {
+    width: 30%;
+}
+
+.contact-logo-large img {
+    width: 100%;
+}
+
+/* Pie de página */
+.contact-footer {
+    background-color: #1f618d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+/* diseño scripts de contacto */
+
+/* Estilos para los mensajes de error */
+.error-message {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Borde rojo para los campos con errores */
+input[required]:invalid,
+textarea[required]:invalid {
+    border: 2px solid red;
+}
+
+/* Borde negro cuando el campo está correcto */
+input[required]:valid,
+textarea[required]:valid {
+    border: 2px solid black;
+}
+
+/* Estilo para los campos del formulario en general */
+.contact-form input,
+.contact-form textarea {
+    border: 2px dashed #000;
+    padding: 10px;
+    width: calc(50% - 20px);
+    margin: 10px;
+}
+
+/* Estilo básico para los iconos sociales */
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Al pasar el cursor por encima, se ampliará con el script */
+.social-icons img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Botón de enviar */
+.submit-btn {
+    background-color: #0066cc;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cuando el botón esté deshabilitado */
+.submit-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Estilos adicionales cuando el mouse pasa sobre el botón */
+.submit-btn:hover:not(:disabled) {
+    background-color: #004c99;
+}
+
+/* LOGIN */
+
+/* Contenedor de formularios */
+.login-register-section {
+    margin-top: 30px;
+    width: 300px; /* Ancho fijo para los formularios */
+}
+
+/* Estilos para el contenedor de formularios */
+.form-container {
+    background-color: white; /* Color de fondo del contenedor */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos para los formularios */
+.form {
+    display: flex;
+    flex-direction: column; /* Colocar los elementos en columna */
+}
+
+/* Estilos para los inputs */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0; /* Espacio entre campos */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 14px; /* Tamaño de fuente */
+}
+
+/* Estilos para el botón */
+button {
+    background-color: #4CAF50; /* Color del botón */
+    color: white; /* Color del texto */
+    padding: 10px; /* Espacio interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos para el botón al pasar el mouse */
+button:hover {
+    background-color: #45a049; /* Color al pasar el mouse */
+}
+
+/* Estilos para los párrafos */
+p {
+    margin: 10px 0; /* Espacio entre párrafos */
+}
+
+/* Estilos para el footer */
+footer {
+    margin-top: 20px; /* Espacio superior */
+    text-align: center; /* Centrar el texto */
+    color: #555; /* Color del texto */
+}
+/* Estilos para la sección de login y registro */
+.login-register-section {
+    display: flex; /* Usar flexbox para colocar los elementos horizontalmente */
+    justify-content: space-between; /* Espacio entre el formulario y la imagen */
+    align-items: center; /* Alinear verticalmente */
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+/* Estilos para el contenedor del formulario */
+.form-container {
+    flex: 1;
+    padding: 40px; 
+    box-sizing: border-box;
+}
+
+/* Estilos para el contenedor de la imagen */
+.image-container {
+    flex: 1; 
+    text-align: right; 
+    padding: 20px; 
+    box-sizing: border-box;
+}
+
+/* Estilos para la imagen */
+.image-container img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px;
+}
+
+/* Inicialmente, los elementos están ocultos */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Cuando son visibles en el viewport, se muestran */
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Imágenes del equipo */
+.team-member {
+    width: 200px;
+    height: auto;
+    margin: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Aumentar tamaño cuando el cursor esté sobre la imagen */
+.team-member:hover {
+    transform: scale(1.1);
+}

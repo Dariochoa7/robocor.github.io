@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <!-- Metadatos básicos para el sitio web -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Servicios Destacados</title>
+        <!-- Enlace a la hoja de estilos externa -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Header con el logo de la empresa y el menú de navegación -->
+        <header>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Logo de Robocor" class="logo">
+                <h1>Servicios Destacados</h1>
+            </div>
+            <!-- Menú de navegación para facilitar el acceso a otras páginas del sitio -->
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Sección de Testimonios -->
+        <section class="testimonials-section">
+            <h2 class="testimonials-title">Testimonios de Clientes</h2>
+
+            <!-- Primer testimonio -->
+            <div class="testimonial">
+                <p class="testimonial-quote">"ROBOCOR ha transformado completamente la eficiencia de nuestros procesos internos. Su solución de RPA nos permitió automatizar tareas repetitivas, ahorrándonos tiempo y reduciendo errores. ¡Altamente recomendados!"</p>
+                <p class="testimonial-author">— Carlos Gómez, Gerente de Operaciones, Empresa XYZ</p>
+                <div class="testimonial-stars">
+                    ★★★★★★★★★★★
+                </div>
+            </div>
+
+            <!-- Segundo testimonio -->
+            <div class="testimonial">
+                <p class="testimonial-quote">"Gracias a ROBOCOR, hemos integrado nuestros sistemas de manera fluida, lo que ha mejorado significativamente nuestra productividad. Su equipo siempre está disponible para brindar soporte técnico."</p>
+                <p class="testimonial-author">— Ana Martínez, Directora de Tecnología, Compañía ABC</p>
+                <div class="testimonial-stars">
+                    ★★★★★★★★★★★
+                </div>
+            </div>
+
+            <!-- Tercer testimonio -->
+            <div class="testimonial">
+                <p class="testimonial-quote">"La solución personalizada que desarrollaron para nosotros fue exactamente lo que necesitábamos. ROBOCOR nos ayudó a optimizar procesos clave en nuestras operaciones."</p>
+                <p class="testimonial-author">— Luis Torres, CEO, Innovatech Solutions</p>
+                <div class="testimonial-stars">
+                    ★★★★★★★★★★★
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer con enlaces a redes sociales y política de privacidad -->
+        <footer>
+            <div class="logo-container">
+                <!-- Repetimos el logo en el footer -->
+                <img src="img/logo.png" alt="Logo de Robocor" class="logo">
+            </div>
+            <p>Política de privacidad – Políticas de cookies | Colombia</p>
+            <!-- Iconos de redes sociales -->
+            <div class="social-icons">
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/gorjeo.png" alt="Contacto"></a>
+            </div>
+        </footer>
+
+        <!-- Script para animar los testimonios al aparecer -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const testimonials = document.querySelectorAll('.testimonial');
+                testimonials.forEach((testimonial, index) => {
+                    setTimeout(() => {
+                        testimonial.style.opacity = 1; // Hacer que el testimonio sea visible
+                        testimonial.style.transform = "translateX(0)"; // Desplazar a la posición original
+                        testimonial.style.transition = "opacity 1s ease-in-out, transform 1s ease-in-out";
+                        
+                        // Animar las estrellas dentro del testimonio con un ligero retraso
+                        const stars = testimonial.querySelector('.testimonial-stars');
+                        stars.style.animation = `shine 1s ${index * 0.5}s forwards`;
+                    }, index * 500); // Se introduce un retardo entre los testimonios
+                });
+            });
+        </script>
+
+        <!-- Script para animar los iconos de redes sociales -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const socialIcons = document.querySelectorAll(".social-icons img");
+
+                socialIcons.forEach(icon => {
+                    icon.addEventListener("mouseover", function() {
+                        // Aumentar el tamaño del icono al pasar el mouse
+                        icon.style.transform = "scale(1.2)";
+                        icon.style.transition = "transform 0.3s ease-in-out";
+                    });
+
+                    icon.addEventListener("mouseout", function() {
+                        // Volver al tamaño original cuando se quita el mouse
+                        icon.style.transform = "scale(1)";
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
+

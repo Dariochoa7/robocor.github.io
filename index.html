@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <!-- Definimos el viewport para que la página sea responsiva -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ROBOCOR - Innovación en Automatización de Procesos</title>
+        <!-- Enlazamos el archivo CSS externo para los estilos -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <!-- Header con el logo y el menú de navegación -->
+        <header>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Logo de Robocor" class="logo">
+                <div class="text-container">
+                    <h1 class="main-title">ROBOCOR</h1>
+                    <h4 class="sub-title">Innovación en Automatización de Procesos</h4>
+                </div>
+            </div>
+            <!-- Menú de navegación principal -->
+            <nav>
+                <ul>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="testimonios.html">Testimonios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Sección de Servicios donde se muestran las distintas áreas que cubre ROBOCOR -->
+        <section id="servicios">
+            <div class="servicios-container">
+                <!-- Cada uno de estos divs representa un servicio ofrecido -->
+                <div class="servicio">
+                    <img src="img/IMAGEN1.png" alt="Automatización de Tareas">
+                    <h3>Automatización de Tareas Repetitivas</h3>
+                </div>
+                <div class="servicio">
+                    <img src="img/IMAGEN2.png" alt="Integración de Sistemas">
+                    <h3>Integración de Sistemas</h3>
+                </div>
+                <div class="servicio">
+                    <img src="img/IMAGEN3.png" alt="Monitoreo y Análisis">
+                    <h3>Monitoreo y Análisis de Datos</h3>
+                </div>
+                <div class="servicio">
+                    <img src="img/IMAGEN4.png" alt="Soluciones Personalizadas">
+                    <h3>Desarrollo de Soluciones Personalizadas</h3>
+                </div>
+                <div class="servicio">
+                    <img src="img/IMAGEN5.png" alt="Implementación de Tecnología RPA">
+                    <h3>Implementación de Tecnología RPA</h3>
+                </div>
+                <div class="servicio">
+                    <img src="img/IMAGEN6.png" alt="Soporte y Mantenimiento Continuo">
+                    <h3>Soporte y Mantenimiento Continuo</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer con el logo y enlaces a las redes sociales -->
+        <footer>
+            <div class="logo-container">
+                <img src="img/logo.png" alt="Logo de Robocor" class="logo">
+            </div>
+            <p>Política de privacidad – Políticas de cookies | Colombia</p>
+            <div class="social-icons">
+                <!-- Iconos de redes sociales que llevan a sus respectivas páginas -->
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="img/gorjeo.png" alt="Contacto"></a>
+            </div>
+        </footer>
+
+        <!-- JavaScript para animar los iconos de redes sociales al pasar el mouse -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const socialIcons = document.querySelectorAll(".social-icons img");
+    
+            socialIcons.forEach(icon => {
+                // Escala los iconos cuando el mouse pasa sobre ellos
+                icon.addEventListener("mouseover", function() {
+                    icon.style.transform = "scale(1.2)";
+                    icon.style.transition = "transform 0.3s ease-in-out";
+                });
+    
+                // Devuelve los iconos a su tamaño original cuando el mouse sale
+                icon.addEventListener("mouseout", function() {
+                    icon.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+
+        <!-- JavaScript para animar las imágenes y textos de los servicios al pasar el mouse -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const services = document.querySelectorAll(".servicio");
+
+            services.forEach(service => {
+                // Aumenta el tamaño de la imagen y el texto al pasar el mouse
+                service.addEventListener("mouseover", function() {
+                    const img = service.querySelector("img");
+                    const text = service.querySelector("h3");
+                    
+                    img.style.transform = "scale(1.1)";
+                    text.style.transform = "scale(1.1)";
+                    
+                    // Añade una transición suave para la animación
+                    img.style.transition = "transform 0.3s ease-in-out";
+                    text.style.transition = "transform 0.3s ease-in-out";
+                });
+
+                // Devuelve la imagen y el texto a su tamaño original cuando el mouse sale
+                service.addEventListener("mouseout", function() {
+                    const img = service.querySelector("img");
+                    const text = service.querySelector("h3");
+
+                    img.style.transform = "scale(1)";
+                    text.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+    </body>
+</html>

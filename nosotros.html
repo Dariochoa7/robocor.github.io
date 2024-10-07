@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento: codificación y responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <!-- Enlace a la hoja de estilos externa para personalizar el diseño -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header que contiene el logo y el menú de navegación -->
+    <header>
+        <div class="logo-container">
+            <!-- Logo de la empresa -->
+            <img src="img/logo.png" alt="Logo de Robocor" class="logo">
+            <!-- Título principal de la página -->
+            <h1>Servicios Destacados</h1>
+        </div>
+        <!-- Menú de navegación con enlaces a las diferentes páginas del sitio -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de 'Sobre Nosotros' que explica la misión y visión de la empresa -->
+    <section class="sobre-nosotros">
+        <div class="content">
+            <!-- Información textual sobre la misión y valores de la empresa -->
+            <p>
+                En <strong>ROBOCOR</strong>, somos líderes en la innovación y automatización de procesos empresariales. 
+                Nuestra misión es transformar la forma en que las organizaciones operan, mediante soluciones de 
+                <strong>Robotic Process Automation (RPA)</strong> que optimizan tareas repetitivas, integran sistemas y permiten un análisis de datos en tiempo real.
+            </p>
+            <p>
+                Nuestro equipo de expertos en tecnología trabaja estrechamente con cada cliente para personalizar soluciones que se ajusten a sus necesidades específicas, ofreciendo soporte continuo y garantizando el máximo rendimiento de los procesos automatizados.
+            </p>
+            <p>
+                Nos enorgullece ayudar a empresas de diversos sectores a mejorar su eficiencia, reducir costos operativos y enfocarse en lo que realmente importa: el crecimiento y la innovación.
+            </p>
+        </div>
+        <!-- Imagen representativa de la empresa que complementa la información textual -->
+        <div class="image">
+            <img src="img/robots.png" alt="Robots en trabajo">
+        </div>
+    </section>
+
+    <!-- Footer que contiene el logo, políticas y enlaces a redes sociales -->
+    <footer>
+        <div class="logo-container">
+            <!-- Repetición del logo en el footer para mantener consistencia visual -->
+            <img src="img/logo.png" alt="Logo de Robocor" class="logo">
+        </div>
+        <!-- Información legal y enlaces a políticas de privacidad -->
+        <p>Política de privacidad – Políticas de cookies | Colombia</p>
+        <!-- Iconos de redes sociales para conectar con el usuario -->
+        <div class="social-icons">
+            <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/gorjeo.png" alt="Contacto"></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript para animar los iconos de redes sociales cuando se pasa el mouse sobre ellos -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const socialIcons = document.querySelectorAll(".social-icons img");
+    
+            socialIcons.forEach(icon => {
+                // Aumenta el tamaño del icono al pasar el mouse
+                icon.addEventListener("mouseover", function() {
+                    icon.style.transform = "scale(1.2)";
+                    icon.style.transition = "transform 0.3s ease-in-out";
+                });
+    
+                // Devuelve el icono a su tamaño original al quitar el mouse
+                icon.addEventListener("mouseout", function() {
+                    icon.style.transform = "scale(1)";
+                });
+            });
+        });
+    </script>
+    <script>
+        // Script para hacer que los elementos aparezcan al hacer scroll
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll(".fade-in"); // Selecciona los elementos que se animarán
+        
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible"); // Añadir la clase 'visible' cuando el elemento es visible
+                    }
+                });
+            });
+        
+            elements.forEach(element => observer.observe(element)); // Observar cada elemento
+        });
+        
+        // Script para ampliar imágenes al pasar el cursor (hover)
+        document.addEventListener("DOMContentLoaded", function() {
+            const teamMembers = document.querySelectorAll(".team-member");
+        
+            teamMembers.forEach(member => {
+                member.addEventListener("mouseover", function() {
+                    member.style.transform = "scale(1.1)"; // Aumenta el tamaño de la imagen
+                    member.style.transition = "transform 0.3s ease-in-out"; // Transición suave
+                });
+        
+                member.addEventListener("mouseout", function() {
+                    member.style.transform = "scale(1)"; // Restaurar el tamaño original
+                });
+            });
+        });
+        </script>
+        
+</body>
+</html>

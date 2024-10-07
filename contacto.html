@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Contacto</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace a la hoja de estilos CSS -->
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo de Robocor" class="logo"> <!-- Logo de la página -->
+            <h1>Información de contacto</h1> <!-- Título de la sección -->
+        </div>
+        <nav>
+            <ul>
+                <!-- Navegación principal del sitio -->
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a href="testimonios.html">Testimonios</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección del formulario de contacto -->
+    <section class="contact-form-section">
+        <form class="contact-form">
+            <div class="form-group">
+                <input type="text" placeholder="NOMBRE*" required> <!-- Campo para el nombre -->
+                <input type="text" placeholder="APELLIDOS*" required> <!-- Campo para los apellidos -->
+            </div>
+
+            <div class="form-group">
+                <input type="email" placeholder="EMAIL*" required> <!-- Campo para el correo electrónico -->
+                <input type="tel" placeholder="TELÉFONO*" required> <!-- Campo para el teléfono -->
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="EMPRESA*" required> <!-- Campo para la empresa -->
+                <input type="text" placeholder="CARGO*" required> <!-- Campo para el cargo -->
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="PAÍS*" required> <!-- Campo para el país -->
+            </div>
+
+            <div class="form-group">
+                <textarea placeholder="COMENTARIOS*" rows="4" required></textarea> <!-- Campo para comentarios -->
+            </div>
+
+            <button type="submit" class="submit-btn">SOLICITA INFORMACIÓN</button> <!-- Botón de envío del formulario -->
+        </form>
+
+        <!-- Imagen del logo grande -->
+        <div class="contact-logo-large">
+            <img src="img/LOGO.png" alt="Logo Robocor Grande"> <!-- Logo de mayor tamaño -->
+        </div>
+    </section>
+
+    <!-- Pie de página con información de contacto -->
+    <footer class="contact-footer">
+        <p>Correo electrónico: contacto@robocor.com | Teléfono: +57 300 123 4567</p> <!-- Información de contacto -->
+        <div class="social-icons">
+            <!-- Íconos de redes sociales -->
+            <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="img/gorjeo.png" alt="Twitter"></a>
+        </div>
+    </footer>
+
+    <script>
+        // Validación del formulario al ser enviado
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector(".contact-form");
+            const inputs = form.querySelectorAll("input[required], textarea[required]"); // Seleccionar campos obligatorios
+            
+            form.addEventListener("submit", function(event) {
+                let valid = true; // Variable para verificar la validez del formulario
+                inputs.forEach(input => {
+                    if (!input.value.trim()) { // Verificar si el campo está vacío
+                        input.style.borderColor = "red"; // Resaltar el campo en rojo
+                        if (!input.nextElementSibling || !input.nextElementSibling.classList.contains("error-message")) {
+                            const errorMessage = document.createElement("span"); // Crear mensaje de error
+                            errorMessage.classList.add("error-message");
+                            errorMessage.style.color = "red";
+                            errorMessage.textContent = `El campo ${input.placeholder} es obligatorio.`; // Mensaje de error
+                            input.parentElement.appendChild(errorMessage); // Agregar mensaje de error al campo
+                        }
+                        valid = false; // Marcar formulario como no válido
+                    } else {
+                        input.style.borderColor = "black"; // Restablecer el color del borde
+                        if (input.nextElementSibling && input.nextElementSibling.classList.contains("error-message")) {
+                            input.nextElementSibling.remove(); // Eliminar mensaje de error
+                        }
+                    }
+
+                    if (input.type === "email" && input.value) { // Validación de formato de correo electrónico
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar email
+                        if (!emailRegex.test(input.value)) { // Verificar el formato del email
+                            input.style.borderColor = "red"; // Resaltar el campo en rojo
+                            if (!input.nextElementSibling || !input.nextElementSibling.classList.contains("error-message")) {
+                                const errorMessage = document.createElement("span");
+                                errorMessage.classList.add("error-message");
+                                errorMessage.style.color = "red";
+                                errorMessage.textContent = "El formato del email no es correcto."; // Mensaje de error para email
+                                input.parentElement.appendChild(errorMessage);
+                            }
+                            valid = false; // Marcar formulario como no válido
+                        }
+                    }
+                });
+
+                if (!valid) {
+                    event.preventDefault(); // Evitar el envío del formulario si no es válido
+                }
+            });
+        });
+
+        // Efecto de hover en los íconos de redes sociales
+        document.addEventListener("DOMContentLoaded", function() {
+            const socialIcons = document.querySelectorAll(".social-icons img");
+    
+            socialIcons.forEach(icon => {
+                icon.addEventListener("mouseover", function() {
+                    icon.style.transform = "scale(1.2)"; // Aumentar el tamaño del ícono al pasar el mouse
+                    icon.style.transition = "transform 0.3s ease-in-out"; // Transición suave
+                });
+    
+                icon.addEventListener("mouseout", function() {
+                    icon.style.transform = "scale(1)"; // Restablecer el tamaño al salir el mouse
+                });
+            });
+        });
+
+        // Manejo del envío del formulario
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector(".contact-form");
+            const submitButton = form.querySelector(".submit-btn");
+    
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // Evitar el envío del formulario por defecto
+    
+                // Deshabilitar el botón de enviar y mostrar el indicador de carga
+                submitButton.textContent = "Enviando..."; // Cambiar texto del botón
+                submitButton.disabled = true; // Deshabilitar botón de envío
+    
+                // Simular un tiempo de espera para enviar el formulario (puedes reemplazar esto con la lógica real)
+                setTimeout(() => {
+                    alert("Formulario enviado con éxito."); // Mostrar alerta de éxito
+                    submitButton.textContent = "SOLICITA INFORMACIÓN"; // Restaurar el texto original
+                    submitButton.disabled = false; // Habilitar botón de envío
+                    form.reset(); // Resetear el formulario después de enviar
+                }, 2000); // Tiempo de espera simulado
+            });
+        });
+    </script>
+</body>
+</html>
